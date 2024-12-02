@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100&display=swap" rel="stylesheet">
-
-    <title>Email Spam Detection</title>
+    <title>Email Spam Detection Result</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,7 +32,7 @@
                 );
             background-blend-mode: overlay;
             color: black;
-
+        }
         .container {
             background: white;
             padding: 20px;
@@ -41,6 +40,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 90%;
             max-width: 500px;
+            text-align: center;
         }
         .ft {
             text-align: center;
@@ -50,16 +50,10 @@
             font-weight: 900;
             font-style: normal;
         }
-               
-        
-        textarea {
-            width: 100%;
-            height: 100px;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            resize: none;
+        .result {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
         }
         button {
             width: 100%;
@@ -78,11 +72,12 @@
 </head>
 <body>
     <div class="container">
-        <h1 class = "ft">Email Spam Detector</h1>
-        <form action="http://localhost:5000/predict" method="POST">
-            <label for="email" class = "ft">Enter Email Content here :</label>
-            <textarea id="email" name="email" placeholder="Paste your email content here..."></textarea>
-            <button type="submit">Check Spam</button>
+        <h1 class="ft">Email Spam Detector</h1>
+        <div class="result">
+            <h3>{{ result }}</h3>
+        </div>
+        <form action="http://localhost:5000/" method="GET">
+            <button type="submit">Back to Home</button>
         </form>
     </div>
 </body>
