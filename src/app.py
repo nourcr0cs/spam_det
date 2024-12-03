@@ -38,7 +38,7 @@ def predict():
     prediction = model.predict(email_tfidf)
     
   
-    if prediction == 1:
+    if prediction[0] == 1:
         result = "This email is spam."
     else:
         result = "This email is ham."
