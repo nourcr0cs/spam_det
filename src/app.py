@@ -35,15 +35,13 @@ def predict():
     
     processed_email = preprocess_text(email_content)
     email_tfidf = tfidf_vectorizer.transform([processed_email]).toarray()
-    
-   
     prediction = model.predict(email_tfidf)
     
   
     if prediction == 1:
         result = "This email is spam."
     else:
-        result = "This email is not spam."
+        result = "This email is ham."
     
     return render_template('result.html', result=result)  
 
